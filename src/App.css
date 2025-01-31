@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,200..1000&display=swap');
+/* <uniquifier>: Used a unique and descriptive class name
+<weight>: Used a value from 200 to 1000 */
+:root{
+    --input-clr: #edf7f4;
+    --base-clr: #8eb486;
+    --text-clr: #685752;
+    --accent-clr: #997c70;
+    --alert-clr: #e4122b;
+    --ff-sans: "Nunito", "Poppins", serif;
+    --fs-100: 1.125rem;
+    --fs-200: 1.25rem;
+    --fs-700: 3.3rem;
+    --fw-light: 300;
+    --fw-medium: 500;
+    --fw-bold: 700;
+    --fw-black: 900; 
+    
+    /*   border radius */
+    --radius: 0.2rem;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+    font-weight: var(--fw-medium);
+    font-family: var(--ff-sans);
+    font-optical-sizing: auto;
+    text-align: center;
+    line-height: normal;
+    color: var(--text-clr);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background: var(--base-clr);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* LAYOUT */
+#navbar {
+  background: white;
+  box-shadow: 0px 0px 10px var(--clr-gray200);
+  padding: 1rem 0;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#brand-name {
+  font-family: 'Montserrat';
+  font-size: var(--fs-200);
+  font-weight: var(--fw-bold);
+  margin-left: 2rem;
+}
+#brand-name a {
+  color: var(--text-clr);
+  text-decoration: none;
+  transition: all 200ms ease-in;
+}
+#brand-name a:hover {
+  color: var(--accent-clr);
+}
+nav #nav-list {
+  display: flex;
+  list-style: none;
+}
+nav .nav-item {
+  margin-right: 2rem;
+}
+footer #nav-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  list-style: none;
+}
+.nav-item a {
+  color: black;
+  text-decoration: none;
+  font-weight: var(--fw-bold);
+  transition: all 200ms ease-in;
+}
+nav .nav-item a:hover {
+  color: var(--text-clr);
 }
 
-.App-link {
-  color: #61dafb;
+#hero {
+  width: 100%;
+  height: 100vh;
+  margin-block-start: .5rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.301)), url('./assets/images/hero-Background.jpg') no-repeat center/cover;
+  color: var(--input-clr);
+  border-radius: 0 0 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-inline-start: 4rem;
+  padding-block-end: 4rem;
+}
+#description {
+  width: 40%;
+  text-align: left;
+}
+#ctf {
+  align-self: self-start;
+  color: var(--alert-clr);
+  text-decoration: none;
+  transition: all 200ms ease-in;
+  font-size: var(--fs-700);
+  font-weight: var(--fw-black);
+}
+#ctf:hover {
+  font-weight: var(--fw-bold);
+  color: var(--accent-clr);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer .nav-item a:hover {
+  color: var(--accent-clr);
 }
